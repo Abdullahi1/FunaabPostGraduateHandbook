@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="pref_program_option_label">
+        <item>@string/pref_program_label_pgd</item>
+        <item>@string/pref_program_label_msc</item>
+        <item>@string/pref_program_label_mict</item>
+        <item>@string/pref_program_label_phd</item>
+    </array>
+    
+    <array name="pref_program_option_value">
+        <item>@string/pref_program_pgd_value</item>
+        <item>@string/pref_program_msc_value</item>
+        <item>@string/pref_program_mict_value</item>
+        <item>@string/pref_program_phd_value</item>
+    </array>
+</resources>

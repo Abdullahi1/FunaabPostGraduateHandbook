@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+
+<item android:title="Home">
+
+        <menu>
+            <item
+                android:id="@+id/nav_home"
+                android:title="Home" />
+
+            <item
+                android:id="@+id/nav_staff"
+                android:title="Academic Staff" />
+
+        </menu>
+</item>
+
+
+    <item android:title="Courses">
+        <menu>
+            <item
+                android:id="@+id/nav_first_semester"
+                android:title="First Semester" />
+            <item
+                android:id="@+id/nav_second_semester"
+                android:title="Second Semester" />
+        </menu>
+    </item>
+
+    <item android:title="Others">
+        <menu>
+            <item
+                android:id="@+id/nav_admission_requirement"
+                android:title="Admission Requirement" />
+            <item
+                android:id="@+id/nav_graduation_requirement"
+                android:title="Graduation Requirement" />
+            <item
+            android:id="@+id/nav_benchmark"
+            android:title="Research Benchmark" />
+
+            <item
+                android:id="@+id/nav_program_duration"
+                android:title="Program Duration" />
+        </menu>
+    </item>
+
+
+</menu>

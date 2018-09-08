@@ -1,0 +1,11 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <ListPreference
+        android:defaultValue="@string/pref_program_pgd_value"
+        android:entries="@array/pref_program_option_label"
+        android:entryValues="@array/pref_program_option_value"
+        android:key="@string/pref_choose_program_key"
+        android:title="@string/pref_title_choose_program"/>
+
+</PreferenceScreen>
