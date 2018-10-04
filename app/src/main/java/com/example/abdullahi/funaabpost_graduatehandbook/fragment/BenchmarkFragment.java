@@ -20,7 +20,7 @@ import java.util.List;
 
 public class BenchmarkFragment extends Fragment {
 
-    int programID;
+    private int programID;
 
     public BenchmarkFragment() {
     }
@@ -62,7 +62,7 @@ public class BenchmarkFragment extends Fragment {
             Context context = view.getContext();
             RecyclerView recyclerView = (RecyclerView) view;
             recyclerView.setLayoutManager(new LinearLayoutManager(context));
-            recyclerView.setAdapter(new BenchmarkRecyclerViewAdapter(researchBenchmarks));
+            recyclerView.setAdapter(new BenchmarkRecyclerViewAdapter(researchBenchmarks,context));
             //noinspection ConstantConditions
             recyclerView.addItemDecoration(new DividerItemDecoration(getContext(), DividerItemDecoration.VERTICAL));
         }

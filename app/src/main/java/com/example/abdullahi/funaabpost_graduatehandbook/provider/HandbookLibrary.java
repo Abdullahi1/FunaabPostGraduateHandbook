@@ -271,7 +271,6 @@ public class HandbookLibrary {
 
         HandbookDatabaseHelper dbHelper = new HandbookDatabaseHelper(context);
         SQLiteDatabase database = dbHelper.getReadableDatabase();
-
         return database.rawQuery(courseQuery, null);
     }
 
@@ -367,7 +366,6 @@ public class HandbookLibrary {
 
         HandbookDatabaseHelper dbHelper = new HandbookDatabaseHelper(context);
         SQLiteDatabase database = dbHelper.getReadableDatabase();
-
         return database.rawQuery(staffCursor, null);
     }
 

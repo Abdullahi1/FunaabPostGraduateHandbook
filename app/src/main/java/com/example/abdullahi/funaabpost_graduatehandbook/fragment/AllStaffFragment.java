@@ -5,12 +5,14 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.abdullahi.funaabpost_graduatehandbook.R;
+import com.example.abdullahi.funaabpost_graduatehandbook.activities.SettingsActivity;
 import com.example.abdullahi.funaabpost_graduatehandbook.adapters.StaffRecyclerViewAdapter;
 import com.example.abdullahi.funaabpost_graduatehandbook.data.AcademicStaff;
 import com.example.abdullahi.funaabpost_graduatehandbook.provider.HandbookLibrary;
@@ -52,9 +54,13 @@ public class AllStaffFragment extends Fragment {
         if (view instanceof RecyclerView) {
             Context context = view.getContext();
             RecyclerView recyclerView = (RecyclerView) view;
-            int mColumnCount = 2;
-            recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
-            recyclerView.setAdapter(new StaffRecyclerViewAdapter(staffList, mListener));
+            if (SettingsActivity.isXLargeTablet(context)) {
+                int mColumnCount = 2;
+                recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
+            }else {
+                recyclerView.setLayoutManager(new LinearLayoutManager(context));
+            }
+            recyclerView.setAdapter(new StaffRecyclerViewAdapter(staffList, mListener,context));
         }
         return view;
     }

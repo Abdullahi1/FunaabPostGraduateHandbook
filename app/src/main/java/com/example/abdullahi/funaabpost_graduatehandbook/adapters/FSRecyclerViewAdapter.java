@@ -1,5 +1,6 @@
 package com.example.abdullahi.funaabpost_graduatehandbook.adapters;
 
+import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -11,6 +12,7 @@ import com.example.abdullahi.funaabpost_graduatehandbook.R;
 import com.example.abdullahi.funaabpost_graduatehandbook.data.Course;
 import com.example.abdullahi.funaabpost_graduatehandbook.dummy.DummyContent.DummyItem;
 import com.example.abdullahi.funaabpost_graduatehandbook.fragment.courseFragment.OnListFragmentInteractionListener;
+import com.example.abdullahi.funaabpost_graduatehandbook.utils.HandbookPreferences;
 
 import java.util.List;
 
@@ -27,8 +29,10 @@ public class FSRecyclerViewAdapter extends RecyclerView.Adapter<FSRecyclerViewAd
     private final OnListFragmentInteractionListener mListener;
 
     private final List<Course> courses;
+    private final Context context;
 
-    public FSRecyclerViewAdapter(OnListFragmentInteractionListener listener, List<Course> coursesList) {
+    public FSRecyclerViewAdapter(OnListFragmentInteractionListener listener, List<Course> coursesList , Context context) {
+        this.context = context;
         mListener = listener;
         this.courses = coursesList;
     }
@@ -46,7 +50,11 @@ public class FSRecyclerViewAdapter extends RecyclerView.Adapter<FSRecyclerViewAd
 
         Course entry = courses.get(position);
 
+
+
         final int id = entry.getId();
+
+        setFont(holder,context);
 
         holder.Tv_courseCode.setText(entry.getCourseCode());
 
@@ -93,4 +101,9 @@ public class FSRecyclerViewAdapter extends RecyclerView.Adapter<FSRecyclerViewAd
 
     }
 
+    private void setFont(ViewHolder holder, Context context){
+        holder.Tv_courseAbbr.setTextSize(HandbookPreferences.getFontSize(context));
+        holder.Tv_courseCode.setTextSize(HandbookPreferences.getFontSize(context));
+        holder.Tv_courseName.setTextSize(HandbookPreferences.getFontSize(context));
+    }
 }

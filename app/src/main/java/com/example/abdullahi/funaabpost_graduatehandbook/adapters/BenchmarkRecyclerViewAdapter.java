@@ -1,5 +1,6 @@
 package com.example.abdullahi.funaabpost_graduatehandbook.adapters;
 
+import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -9,6 +10,8 @@ import android.widget.TextView;
 
 import com.example.abdullahi.funaabpost_graduatehandbook.R;
 import com.example.abdullahi.funaabpost_graduatehandbook.data.ResearchBenchmark;
+import com.example.abdullahi.funaabpost_graduatehandbook.utils.HandbookPreferences;
+
 import java.util.List;
 
 import butterknife.BindView;
@@ -19,8 +22,10 @@ public class BenchmarkRecyclerViewAdapter extends RecyclerView.Adapter<Benchmark
 
 
     private final List<ResearchBenchmark> researchBenchmarks;
+    private final Context context;
 
-    public BenchmarkRecyclerViewAdapter(List<ResearchBenchmark> benchmarks) {
+    public BenchmarkRecyclerViewAdapter(List<ResearchBenchmark> benchmarks , Context context) {
+        this.context = context;
         researchBenchmarks = benchmarks;
     }
 
@@ -35,7 +40,7 @@ public class BenchmarkRecyclerViewAdapter extends RecyclerView.Adapter<Benchmark
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder holder, int position) {
         ResearchBenchmark benchmark = researchBenchmarks.get(position);
-
+        holder.benchmarkName.setTextSize(HandbookPreferences.getFontSize(context));
         holder.benchmarkName.setText(benchmark.getBenchmarkName());
     }
 

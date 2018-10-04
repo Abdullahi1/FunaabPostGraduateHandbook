@@ -20,7 +20,7 @@ import java.util.List;
 
 public class DurationFragment extends Fragment {
 
-    int programID;
+    private int programID;
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
@@ -55,7 +55,7 @@ public class DurationFragment extends Fragment {
 
 
         //noinspection ConstantConditions
-        getActivity().setTitle("Program Duration");
+        getActivity().setTitle("HandbookPreferences Duration");
 
 
         List<ProgramDuration> programDurationList = HandbookLibrary.getDuration(getContext(), programID);
@@ -66,7 +66,7 @@ public class DurationFragment extends Fragment {
             Context context = view.getContext();
             RecyclerView recyclerView = (RecyclerView) view;
             recyclerView.setLayoutManager(new LinearLayoutManager(context));
-            recyclerView.setAdapter(new DurationRecyclerViewAdapter(programDurationList));
+            recyclerView.setAdapter(new DurationRecyclerViewAdapter(programDurationList,context));
             //noinspection ConstantConditions
             recyclerView.addItemDecoration(new DividerItemDecoration(getContext(), DividerItemDecoration.VERTICAL));
         }

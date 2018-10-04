@@ -8,4 +8,12 @@
         android:key="@string/pref_choose_program_key"
         android:title="@string/pref_title_choose_program"/>
 
+    <ListPreference
+        android:defaultValue="@string/pref_font_small_value"
+        android:entries="@array/pref_font_option_label"
+        android:entryValues="@array/pref_font_option_value"
+        android:key="@string/pref_choose_font_key"
+        android:title="@string/pref_title_choose_font"
+        />
+
 </PreferenceScreen>

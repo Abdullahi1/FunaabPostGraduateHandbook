@@ -21,8 +21,8 @@ import java.util.List;
 
 public class PhDCourseFragment extends Fragment {
 
-    int semester;
-    int programID;
+    private int semester;
+    private int programID;
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
@@ -69,7 +69,7 @@ public class PhDCourseFragment extends Fragment {
             Context context = view.getContext();
             RecyclerView recyclerView = (RecyclerView) view;
             recyclerView.setLayoutManager(new LinearLayoutManager(context));
-            recyclerView.setAdapter(new PhDCourseRecyclerViewAdapter(coursesList));
+            recyclerView.setAdapter(new PhDCourseRecyclerViewAdapter(coursesList,context));
             //noinspection ConstantConditions
             recyclerView.addItemDecoration(new DividerItemDecoration(getContext(), DividerItemDecoration.VERTICAL));
         }

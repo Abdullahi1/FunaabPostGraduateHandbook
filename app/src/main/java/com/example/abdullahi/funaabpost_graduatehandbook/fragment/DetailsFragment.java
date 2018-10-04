@@ -21,7 +21,7 @@ import java.util.List;
 
 public class DetailsFragment extends Fragment {
 
-    int courseId;
+    private int courseId;
 
     public DetailsFragment() {
         // Required empty public constructor
@@ -55,7 +55,7 @@ public class DetailsFragment extends Fragment {
 
         List<CourseSynopsis> synopses = HandbookLibrary.getSynopsis(getContext(), courseId);
 
-        SynopsisRecyclerViewAdapter adapter = new SynopsisRecyclerViewAdapter(synopses);
+        SynopsisRecyclerViewAdapter adapter = new SynopsisRecyclerViewAdapter(synopses,getContext());
 
         if (view instanceof RecyclerView) {
             Context context = view.getContext();

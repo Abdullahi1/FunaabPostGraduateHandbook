@@ -26,8 +26,8 @@ import java.util.List;
  */
 public class courseFragment extends Fragment {
 
-    int semester;
-    int programID;
+    private int semester;
+    private int programID;
     private OnListFragmentInteractionListener mListener;
 
 
@@ -80,7 +80,7 @@ public class courseFragment extends Fragment {
 
         List<Course> coursesList = HandbookLibrary.getCourses(getContext(), semester, programID);
 
-        FSRecyclerViewAdapter courseAdapter = new FSRecyclerViewAdapter(mListener, coursesList);
+        FSRecyclerViewAdapter courseAdapter = new FSRecyclerViewAdapter(mListener, coursesList,getContext());
 
         if (view instanceof RecyclerView) {
             Context context = view.getContext();

@@ -21,8 +21,8 @@ import java.util.List;
 
 public class AdmReqFragment extends Fragment {
 
-    int requirementID;
-    int programID;
+    private int requirementID;
+    private int programID;
 
     public AdmReqFragment() {
     }
@@ -63,7 +63,7 @@ public class AdmReqFragment extends Fragment {
             Context context = view.getContext();
             RecyclerView recyclerView = (RecyclerView) view;
             recyclerView.setLayoutManager(new LinearLayoutManager(context));
-            recyclerView.setAdapter(new AdmReqRecyclerViewAdapter(requirements));
+            recyclerView.setAdapter(new AdmReqRecyclerViewAdapter(requirements,context));
             //noinspection ConstantConditions
             recyclerView.addItemDecoration(new DividerItemDecoration(getContext(), DividerItemDecoration.VERTICAL));
         }

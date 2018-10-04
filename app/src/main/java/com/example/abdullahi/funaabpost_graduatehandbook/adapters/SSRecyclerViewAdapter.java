@@ -1,5 +1,6 @@
 package com.example.abdullahi.funaabpost_graduatehandbook.adapters;
 
+import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -11,6 +12,7 @@ import com.example.abdullahi.funaabpost_graduatehandbook.R;
 import com.example.abdullahi.funaabpost_graduatehandbook.data.Course;
 import com.example.abdullahi.funaabpost_graduatehandbook.dummy.DummyContent.DummyItem;
 import com.example.abdullahi.funaabpost_graduatehandbook.fragment.SSCourseFragment.OnListFragmentInteractionListener;
+import com.example.abdullahi.funaabpost_graduatehandbook.utils.HandbookPreferences;
 
 import java.util.List;
 
@@ -26,8 +28,10 @@ public class SSRecyclerViewAdapter extends RecyclerView.Adapter<SSRecyclerViewAd
     private final OnListFragmentInteractionListener mListener;
     private final List<Course> courses;
     private final int program;
+    private final Context context;
 
-    public SSRecyclerViewAdapter(List<Course> course, OnListFragmentInteractionListener listener, int programID) {
+    public SSRecyclerViewAdapter(List<Course> course, OnListFragmentInteractionListener listener, int programID , Context context) {
+        this.context = context;
         courses = course;
         mListener = listener;
         program = programID;
@@ -70,6 +74,7 @@ public class SSRecyclerViewAdapter extends RecyclerView.Adapter<SSRecyclerViewAd
 
         } else {
             final Course entry = courses.get(getNewItemPosition(position));
+            setFont(holder,context);
 
             holder.Tv_courseCode.setText(entry.getCourseCode());
 
@@ -125,7 +130,7 @@ public class SSRecyclerViewAdapter extends RecyclerView.Adapter<SSRecyclerViewAd
                 programName = "PHD";
                 break;
         }
-        content = "The Second Semester Courses For The " + programName + " Programme Are:";
+        content = "Second Semester Courses";
         return content;
     }
 
@@ -153,6 +158,13 @@ public class SSRecyclerViewAdapter extends RecyclerView.Adapter<SSRecyclerViewAd
             Tv_header = view.findViewById(R.id.headerTitle1);
         }
 
+
+    }
+
+    private void setFont(ViewHolder holder, Context context){
+        holder.Tv_courseAbbr.setTextSize(HandbookPreferences.getFontSize(context));
+        holder.Tv_courseName.setTextSize(HandbookPreferences.getFontSize(context));
+        holder.Tv_courseCode.setTextSize(HandbookPreferences.getFontSize(context));
 
     }
 }

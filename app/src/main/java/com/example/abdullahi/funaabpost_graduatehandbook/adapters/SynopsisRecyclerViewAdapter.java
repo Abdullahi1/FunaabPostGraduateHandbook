@@ -1,5 +1,6 @@
 package com.example.abdullahi.funaabpost_graduatehandbook.adapters;
 
+import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -9,6 +10,7 @@ import android.widget.TextView;
 
 import com.example.abdullahi.funaabpost_graduatehandbook.R;
 import com.example.abdullahi.funaabpost_graduatehandbook.data.CourseSynopsis;
+import com.example.abdullahi.funaabpost_graduatehandbook.utils.HandbookPreferences;
 
 import java.util.List;
 
@@ -18,8 +20,10 @@ import butterknife.ButterKnife;
 public class SynopsisRecyclerViewAdapter extends RecyclerView.Adapter<SynopsisRecyclerViewAdapter.ViewHolder> {
 
     private final List<CourseSynopsis> synopses;
+    private final Context context;
 
-    public SynopsisRecyclerViewAdapter(List<CourseSynopsis> synopses) {
+    public SynopsisRecyclerViewAdapter(List<CourseSynopsis> synopses , Context context) {
+        this.context = context;
         this.synopses = synopses;
     }
 
@@ -35,10 +39,9 @@ public class SynopsisRecyclerViewAdapter extends RecyclerView.Adapter<SynopsisRe
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
         final CourseSynopsis entry = synopses.get(position);
-
+        holder.Tv_synopsisName.setTextSize(HandbookPreferences.getFontSize(context));
         holder.Tv_synopsisName.setText(entry.getSynopsisName());
     }
-
     @Override
     public int getItemCount() {
         return synopses.size();

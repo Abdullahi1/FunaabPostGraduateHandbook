@@ -26,8 +26,8 @@ import java.util.List;
  */
 public class SSCourseFragment extends Fragment {
 
-    int semester;
-    int programID;
+    private int semester;
+    private int programID;
     private OnListFragmentInteractionListener mListener;
 
     /**
@@ -75,7 +75,7 @@ public class SSCourseFragment extends Fragment {
             Context context = view.getContext();
             RecyclerView recyclerView = (RecyclerView) view;
             recyclerView.setLayoutManager(new LinearLayoutManager(context));
-            recyclerView.setAdapter(new SSRecyclerViewAdapter(coursesList, mListener, programID));
+            recyclerView.setAdapter(new SSRecyclerViewAdapter(coursesList, mListener, programID,context));
             //noinspection ConstantConditions
             recyclerView.addItemDecoration(new DividerItemDecoration(getContext(), DividerItemDecoration.VERTICAL));
         }

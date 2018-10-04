@@ -1,5 +1,6 @@
 package com.example.abdullahi.funaabpost_graduatehandbook.adapters;
 
+import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -9,6 +10,8 @@ import android.widget.TextView;
 
 import com.example.abdullahi.funaabpost_graduatehandbook.R;
 import com.example.abdullahi.funaabpost_graduatehandbook.data.Requirement;
+import com.example.abdullahi.funaabpost_graduatehandbook.utils.HandbookPreferences;
+
 import java.util.List;
 
 import butterknife.BindView;
@@ -19,8 +22,9 @@ import butterknife.ButterKnife;
 public class GradReqRecyclerViewAdapter extends RecyclerView.Adapter<GradReqRecyclerViewAdapter.ViewHolder> {
 
     private final List<Requirement> requirements;
-
-    public GradReqRecyclerViewAdapter(List<Requirement> requirements) {
+    private final Context context;
+    public GradReqRecyclerViewAdapter(List<Requirement> requirements , Context context) {
+        this.context = context;
         this.requirements = requirements;
     }
 
@@ -36,6 +40,7 @@ public class GradReqRecyclerViewAdapter extends RecyclerView.Adapter<GradReqRecy
     public void onBindViewHolder(@NonNull final ViewHolder holder, int position) {
         final Requirement entry = requirements.get(position);
 
+        holder.Tv_requirementName.setTextSize(HandbookPreferences.getFontSize(context));
         holder.Tv_requirementName.setText(entry.getRequirementName());
     }
 

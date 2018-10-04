@@ -6,8 +6,8 @@ public class CourseSynopsis {
     public static final String synopsis_name = "synopsisName";
     public static final String course_id = "course_id";
 
-    private int id;
-    private String synopsisName;
+    private final int id;
+    private final String synopsisName;
 
 
     public CourseSynopsis(int id, String synopsisName) {

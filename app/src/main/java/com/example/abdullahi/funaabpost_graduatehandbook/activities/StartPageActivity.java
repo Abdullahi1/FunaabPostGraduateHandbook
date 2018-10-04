@@ -13,12 +13,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.ImageView;
 
 import com.example.abdullahi.funaabpost_graduatehandbook.HomeFragment;
 import com.example.abdullahi.funaabpost_graduatehandbook.R;
+import com.example.abdullahi.funaabpost_graduatehandbook.utils.HandbookPreferences;
 import com.example.abdullahi.funaabpost_graduatehandbook.fragment.StaffFragment;
-import com.example.abdullahi.funaabpost_graduatehandbook.data.Program;
 import com.example.abdullahi.funaabpost_graduatehandbook.fragment.AdmReqFragment;
 import com.example.abdullahi.funaabpost_graduatehandbook.fragment.AllStaffFragment;
 import com.example.abdullahi.funaabpost_graduatehandbook.fragment.BenchmarkFragment;
@@ -55,7 +54,7 @@ public class StartPageActivity extends AppCompatActivity
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        program = Program.getProgramID(this);
+        program = HandbookPreferences.getProgramID(this);
 
         //chooseFragment(program);
         getSupportFragmentManager().beginTransaction()
@@ -252,6 +251,9 @@ public class StartPageActivity extends AppCompatActivity
                         StaffFragment.newInstance(position))
                 .addToBackStack(null).commit();
     }
+
+
+
 }
 
 

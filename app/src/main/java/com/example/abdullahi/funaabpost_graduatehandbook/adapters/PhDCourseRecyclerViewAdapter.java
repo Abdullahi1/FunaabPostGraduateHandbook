@@ -1,5 +1,6 @@
 package com.example.abdullahi.funaabpost_graduatehandbook.adapters;
 
+import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -9,6 +10,8 @@ import android.widget.TextView;
 
 import com.example.abdullahi.funaabpost_graduatehandbook.R;
 import com.example.abdullahi.funaabpost_graduatehandbook.data.Course;
+import com.example.abdullahi.funaabpost_graduatehandbook.utils.HandbookPreferences;
+
 import java.util.List;
 
 import butterknife.BindView;
@@ -18,8 +21,10 @@ import butterknife.ButterKnife;
 public class PhDCourseRecyclerViewAdapter extends RecyclerView.Adapter<PhDCourseRecyclerViewAdapter.ViewHolder> {
 
     private final List<Course> courses;
+    private final Context context;
 
-    public PhDCourseRecyclerViewAdapter(List<Course> course) {
+    public PhDCourseRecyclerViewAdapter(List<Course> course , Context context) {
+        this.context = context;
         courses = course;
 
     }
@@ -37,9 +42,9 @@ public class PhDCourseRecyclerViewAdapter extends RecyclerView.Adapter<PhDCourse
 
         Course entry = courses.get(position);
         String courseName = entry.getCourseName();
+
+        holder.CourseName.setTextSize(HandbookPreferences.getFontSize(context));
         holder.CourseName.setText(courseName);
-
-
     }
 
     @Override

@@ -13,6 +13,7 @@
     <!-- Example General settings -->
     <string name="pref_header_general">General</string>
 
+    <!--Example Program Settings -->
     <string name="pref_title_choose_program">Choose Program</string>
 
     <string name="pref_program_label_pgd">Diploma in Computer Science (PG D)</string>
@@ -27,6 +28,26 @@
     <string name="pref_program_phd_value">4</string>
 
     <string name="pref_choose_program_key">program_list</string>
+
+
+    <!--Example Program Settings -->
+    <string name="pref_title_choose_font">Font Size</string>
+
+    <string name="pref_font_label_small">Small</string>
+    <string name="pref_font_label_normal">Normal</string>
+    <string name="pref_font_label_large">Large</string>
+    <string name="pref_font_label_extra_large">Huge</string>
+
+
+    <string name="pref_font_small_value">1</string>
+    <string name="pref_font_normal_value">2</string>
+    <string name="pref_font_large_value">3</string>
+    <string name="pref_font_extra_large_value">4</string>
+
+    <string name="pref_choose_font_key">font_list</string>
+
+
+
 
     <!-- Example settings for Data & Sync -->
     <string name="pref_header_data_sync" tools:keep="@string/pref_header_data_sync">Data &amp; sync</string>
@@ -169,8 +190,32 @@
         "On the layout level, design your app layout to minimize opportunities for interference. "
         "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
         "when a user tries to pick up one of cards.\n\n"
+
     </string>
 
+    <string name="intro_comp_sci">
+        The Department of Computer Science was an option in the then Mathematical Sciences Department established in 1988 at the inception of the University of Agriculture, Abeokuta. 
+        In 1998/1999 session, Postgraduate Diploma in Computer Science, Master of Science and Doctor of Philosophy degrees in Computer Science were approved by the Senate. During the 2005/2006 session, the department of Computer Science evolved to become a unique academic division in the production of highly trained postgraduates in the field of Computer Science. 
+        In 2006/2007 session, Master of Information and Communication Technology was approved by the Senate. 
+        The Department offers programmes leading to the award of Bachelors of Computer Science, Postgraduate Diplomas, Master of Information and Communication Technology, Master of Science and Doctor of Philosophy degrees in Computer Science. 
+        Staff members of the Department are in the forefront in the recent areas of computer research work. 
+        This has enabled her to produce quality postgraduates who are now occupying various positions in banks, industries, academia and private companies.
+    </string>
 
+<string name="philosophy">
+    The programme is designed to give students the opportunity to obtain a broad knowledge in both theory and practice of Computer Science.
+    Students will be trained to design frameworks and write programmes for solving different real-life problems.
+    Such training will lead to the production of skilled and manpower that is adequately furnished with the current and comprehensive knowledge to do researches in Computer Science as well as Information and Communication Technology which will impact greatly on the socio-economic growth and development of our nation.
+</string>
+
+    <string name="objectives">
+        "The objectives of the post graduate degree in Computer science are to:\n\n"
+"•	Build on the foundation the students have in Computer science by enhancing their knowledge as required for postgraduate studies.\n"
+"•	Carry out research work in any field of Computer science.\n"
+"•	Develop software that are needed in various sectors of the economy.\n"
+"•	Provide timeless research and consultancy services to industries, banks and other critical sectors of the economy.\n"
+"•	Profers computer based software, tools and devices which would address the challenges posed on information technology driven global economy/society.\n"
+
+    </string>
 
 </resources>

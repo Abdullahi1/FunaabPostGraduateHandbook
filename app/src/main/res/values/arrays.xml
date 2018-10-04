@@ -13,4 +13,21 @@
         <item>@string/pref_program_mict_value</item>
         <item>@string/pref_program_phd_value</item>
     </array>
+
+
+    <array name="pref_font_option_label">
+        <item>@string/pref_font_label_small</item>
+        <item>@string/pref_font_label_normal</item>
+        <item>@string/pref_font_label_large</item>
+        <item>@string/pref_font_label_extra_large</item>
+    </array>
+
+    <array name="pref_font_option_value">
+        <item>@string/pref_font_small_value</item>
+        <item>@string/pref_font_normal_value</item>
+        <item>@string/pref_font_large_value</item>
+        <item>@string/pref_font_extra_large_value</item>
+    </array>
+
+
 </resources>

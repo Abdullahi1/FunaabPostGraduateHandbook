@@ -1,5 +1,6 @@
 package com.example.abdullahi.funaabpost_graduatehandbook.adapters;
 
+import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -26,8 +27,10 @@ public class StaffRecyclerViewAdapter extends RecyclerView.Adapter<StaffRecycler
 
     private final List<AcademicStaff> staffList;
     private final OnListFragmentInteractionListener mListener;
+     private final Context context;
 
-    public StaffRecyclerViewAdapter(List<AcademicStaff> academicStaffs, OnListFragmentInteractionListener listener) {
+    public StaffRecyclerViewAdapter(List<AcademicStaff> academicStaffs, OnListFragmentInteractionListener listener , Context context) {
+        this.context = context;
         staffList = academicStaffs;
         mListener = listener;
     }

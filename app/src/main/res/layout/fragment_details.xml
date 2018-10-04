@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_height="wrap_content"
     android:layout_width="match_parent"
-    android:layout_margin="@dimen/cardview_default_elevation"
+    android:layout_margin="5dp"
     style="@style/CardView">
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -17,7 +17,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="16dp"
-        android:textSize="25sp"
+        android:textSize="20sp"
         android:text="@string/hello_blank_fragment" />
 
 </LinearLayout>
