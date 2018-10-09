@@ -16,6 +16,7 @@ import android.view.MenuItem;
 
 import com.example.abdullahi.funaabpost_graduatehandbook.HomeFragment;
 import com.example.abdullahi.funaabpost_graduatehandbook.R;
+import com.example.abdullahi.funaabpost_graduatehandbook.fragment.PGDFragment;
 import com.example.abdullahi.funaabpost_graduatehandbook.utils.HandbookPreferences;
 import com.example.abdullahi.funaabpost_graduatehandbook.fragment.StaffFragment;
 import com.example.abdullahi.funaabpost_graduatehandbook.fragment.AdmReqFragment;
@@ -111,11 +112,12 @@ public class StartPageActivity extends AppCompatActivity
         int id = item.getItemId();
 
         switch (id) {
-            case R.id.nav_first_semester:
+            case R.id.nav_first_semester: {
 
                 chooseFragment(program);
 
                 break;
+            }
             case R.id.nav_second_semester: {
 
                 getSupportFragmentManager().beginTransaction()
@@ -125,16 +127,16 @@ public class StartPageActivity extends AppCompatActivity
 
                 break;
             }
-            case R.id.nav_admission_requirement: {
+            case R.id.nav_pgd: {
 
                 getSupportFragmentManager().beginTransaction()
                         .replace(R.id.fragmentContainer,
-                                AdmReqFragment.newInstance(program))
+                                PGDFragment.newInstance())
                         .commit();
 
                 break;
             }
-            case R.id.nav_graduation_requirement: {
+            case R.id.nav_msc: {
 
                 getSupportFragmentManager().beginTransaction()
                         .replace(R.id.fragmentContainer,
@@ -143,7 +145,7 @@ public class StartPageActivity extends AppCompatActivity
 
                 break;
             }
-            case R.id.nav_benchmark: {
+            case R.id.nav_mict: {
 
                 getSupportFragmentManager().beginTransaction()
                         .replace(R.id.fragmentContainer,
@@ -152,7 +154,7 @@ public class StartPageActivity extends AppCompatActivity
 
                 break;
             }
-            case R.id.nav_program_duration: {
+            case R.id.nav_phd: {
 
                 getSupportFragmentManager().beginTransaction()
                         .replace(R.id.fragmentContainer,

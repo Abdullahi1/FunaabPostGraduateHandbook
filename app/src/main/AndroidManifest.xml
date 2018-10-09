@@ -35,6 +35,19 @@
             android:authorities="com.example.abdullahi.funaabpost_graduatehandbook.provider"
             android:exported="false" />
 
+        <activity android:name=".activities.CourseActivity"
+            android:parentActivityName=".activities.StartPageActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.StartPageActivity" />
+        </activity>
+
+        <activity android:name=".activities.SynopsisActivity"
+            android:parentActivityName=".activities.StartPageActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.StartPageActivity" />
+        </activity>
     </application>
 
 </manifest>

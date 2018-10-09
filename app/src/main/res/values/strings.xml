@@ -47,8 +47,6 @@
     <string name="pref_choose_font_key">font_list</string>
 
 
-
-
     <!-- Example settings for Data & Sync -->
     <string name="pref_header_data_sync" tools:keep="@string/pref_header_data_sync">Data &amp; sync</string>
 
@@ -98,8 +96,6 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-
-
 
 
     <string name="large_text">
@@ -202,7 +198,7 @@
         This has enabled her to produce quality postgraduates who are now occupying various positions in banks, industries, academia and private companies.
     </string>
 
-<string name="philosophy">
+    <string name="philosophy">
     The programme is designed to give students the opportunity to obtain a broad knowledge in both theory and practice of Computer Science.
     Students will be trained to design frameworks and write programmes for solving different real-life problems.
     Such training will lead to the production of skilled and manpower that is adequately furnished with the current and comprehensive knowledge to do researches in Computer Science as well as Information and Communication Technology which will impact greatly on the socio-economic growth and development of our nation.
@@ -217,5 +213,8 @@
 "•	Profers computer based software, tools and devices which would address the challenges posed on information technology driven global economy/society.\n"
 
     </string>
+
+    <string name="first_semester">First Semester</string>
+    <string name="second_semester">Second Semester</string>
 
 </resources>

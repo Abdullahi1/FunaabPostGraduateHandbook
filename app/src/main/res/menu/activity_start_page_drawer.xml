@@ -30,21 +30,21 @@
         </menu>
     </item>
 
-    <item android:title="Others">
+    <item android:title="Programme">
         <menu>
             <item
-                android:id="@+id/nav_admission_requirement"
-                android:title="Admission Requirement" />
+                android:id="@+id/nav_pgd"
+                android:title="Postgraduate Diploma Structure" />
             <item
-                android:id="@+id/nav_graduation_requirement"
-                android:title="Graduation Requirement" />
+                android:id="@+id/nav_msc"
+                android:title="Master of Science in Computer Science(M.Sc.)" />
             <item
-            android:id="@+id/nav_benchmark"
-            android:title="Research Benchmark" />
+            android:id="@+id/nav_mict"
+            android:title="Master of Information and Communication Technology(M.ICT)" />
 
             <item
-                android:id="@+id/nav_program_duration"
-                android:title="Program Duration" />
+                android:id="@+id/nav_phd"
+                android:title="Doctor of Philosophy (Ph.D.)" />
         </menu>
     </item>
 
