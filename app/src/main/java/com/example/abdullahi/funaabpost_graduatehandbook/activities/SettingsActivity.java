@@ -15,7 +15,6 @@ import android.support.v4.app.NavUtils;
 import android.support.v7.app.ActionBar;
 import android.view.MenuItem;
 
-import com.example.abdullahi.funaabpost_graduatehandbook.AppCompatPreferenceActivity;
 import com.example.abdullahi.funaabpost_graduatehandbook.R;
 
 import java.util.List;
@@ -109,6 +108,7 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
 //
 //        }
 //    }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
@@ -138,6 +138,7 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
     /**
      * Set up the {@link android.app.ActionBar}, if the API is available.
      */
+
     private void setupActionBar() {
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
@@ -192,7 +193,7 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
             // updated to reflect the new value, per the Android Design
             // guidelines.
 
-            bindPreferenceSummaryToValue(findPreference("program_list"));
+            //bindPreferenceSummaryToValue(findPreference("program_list"));
             bindPreferenceSummaryToValue(findPreference("font_list"));
         }
 

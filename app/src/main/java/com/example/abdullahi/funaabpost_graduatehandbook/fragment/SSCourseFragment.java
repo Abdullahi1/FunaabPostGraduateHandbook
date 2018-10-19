@@ -66,7 +66,7 @@ public class SSCourseFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_sscourse_list, container, false);
 
         //noinspection ConstantConditions
-        getActivity().setTitle("Second Semester Courses");
+        //getActivity().setTitle("Second Semester Courses");
 
         List<Course> coursesList = HandbookLibrary.getCourses(getContext(), semester, programID);
 
@@ -75,7 +75,7 @@ public class SSCourseFragment extends Fragment {
             Context context = view.getContext();
             RecyclerView recyclerView = (RecyclerView) view;
             recyclerView.setLayoutManager(new LinearLayoutManager(context));
-            recyclerView.setAdapter(new SSRecyclerViewAdapter(coursesList, mListener, programID,context));
+            recyclerView.setAdapter(new SSRecyclerViewAdapter(coursesList, mListener,context));
             //noinspection ConstantConditions
             recyclerView.addItemDecoration(new DividerItemDecoration(getContext(), DividerItemDecoration.VERTICAL));
         }

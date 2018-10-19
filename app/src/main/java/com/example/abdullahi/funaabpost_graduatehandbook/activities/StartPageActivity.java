@@ -14,29 +14,21 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.example.abdullahi.funaabpost_graduatehandbook.HomeFragment;
+import com.example.abdullahi.funaabpost_graduatehandbook.fragment.HomeFragment;
 import com.example.abdullahi.funaabpost_graduatehandbook.R;
-import com.example.abdullahi.funaabpost_graduatehandbook.fragment.PGDFragment;
 import com.example.abdullahi.funaabpost_graduatehandbook.utils.HandbookPreferences;
 import com.example.abdullahi.funaabpost_graduatehandbook.fragment.StaffFragment;
-import com.example.abdullahi.funaabpost_graduatehandbook.fragment.AdmReqFragment;
 import com.example.abdullahi.funaabpost_graduatehandbook.fragment.AllStaffFragment;
-import com.example.abdullahi.funaabpost_graduatehandbook.fragment.BenchmarkFragment;
 import com.example.abdullahi.funaabpost_graduatehandbook.fragment.DetailsFragment;
-import com.example.abdullahi.funaabpost_graduatehandbook.fragment.DurationFragment;
-import com.example.abdullahi.funaabpost_graduatehandbook.fragment.GradReqFragment;
 import com.example.abdullahi.funaabpost_graduatehandbook.fragment.PhDCourseFragment;
 import com.example.abdullahi.funaabpost_graduatehandbook.fragment.SSCourseFragment;
 import com.example.abdullahi.funaabpost_graduatehandbook.fragment.courseFragment;
 
 public class StartPageActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener,
-        courseFragment.OnListFragmentInteractionListener,
-        SSCourseFragment.OnListFragmentInteractionListener,
-        AllStaffFragment.OnListFragmentInteractionListener {
+        implements NavigationView.OnNavigationItemSelectedListener{
 
 
-    private int program;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,18 +47,18 @@ public class StartPageActivity extends AppCompatActivity
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        program = HandbookPreferences.getProgramID(this);
+        //program = HandbookPreferences.getProgramID(this);
 
         //chooseFragment(program);
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.fragmentContainer, HomeFragment.newInstance()).commit();
 
 
-        if (program == 4) {
-            Menu nav_menu = navigationView.getMenu();
-            nav_menu.findItem(R.id.nav_second_semester).setVisible(false);
-            nav_menu.findItem(R.id.nav_first_semester).setTitle("Course Work");
-        }
+//        if (program == 4) {
+//            Menu nav_menu = navigationView.getMenu();
+//            nav_menu.findItem(R.id.nav_second_semester).setVisible(false);
+//            nav_menu.findItem(R.id.nav_first_semester).setTitle("Course Work");
+//        }
 
     }
 
@@ -76,8 +68,8 @@ public class StartPageActivity extends AppCompatActivity
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
-            super.onBackPressed();
-            //showCloseDialogue();
+            //super.onBackPressed();
+            showCloseDialogue();
         }
     }
 
@@ -112,60 +104,74 @@ public class StartPageActivity extends AppCompatActivity
         int id = item.getItemId();
 
         switch (id) {
-            case R.id.nav_first_semester: {
-
-                chooseFragment(program);
-
-                break;
-            }
-            case R.id.nav_second_semester: {
-
-                getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.fragmentContainer,
-                                SSCourseFragment.newInstance(program))
-                        .commit();
-
-                break;
-            }
+//            case R.id.nav_first_semester:
+//
+//                chooseFragment(program);
+//
+//                break;
+//            case R.id.nav_second_semester: {
+//
+//                getSupportFragmentManager().beginTransaction()
+//                        .replace(R.id.fragmentContainer,
+//                                SSCourseFragment.newInstance(program))
+//                        .commit();
+//
+//                break;
+//            }
             case R.id.nav_pgd: {
 
-                getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.fragmentContainer,
-                                PGDFragment.newInstance())
-                        .commit();
+                Intent intent = new Intent(this,ProgramActivity.class);
+                intent.putExtra("ProgramID",1);
+                startActivity(intent);
+//                getSupportFragmentManager().beginTransaction()
+//                        .replace(R.id.fragmentContainer,
+//                                ProgramFragment.newInstance())
+//                        .commit();
 
                 break;
             }
             case R.id.nav_msc: {
 
-                getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.fragmentContainer,
-                                GradReqFragment.newInstance(program))
-                        .commit();
+                Intent intent = new Intent(this,ProgramActivity.class);
+                intent.putExtra("ProgramID",2);
+                startActivity(intent);
+
+//                getSupportFragmentManager().beginTransaction()
+//                        .replace(R.id.fragmentContainer,
+//                                GradReqFragment.newInstance(program))
+//                        .commit();
 
                 break;
             }
             case R.id.nav_mict: {
+                Intent intent = new Intent(this,ProgramActivity.class);
+                intent.putExtra("ProgramID",3);
+                startActivity(intent);
 
-                getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.fragmentContainer,
-                                BenchmarkFragment.newInstance(program))
-                        .commit();
+//                getSupportFragmentManager().beginTransaction()
+//                        .replace(R.id.fragmentContainer,
+//                                BenchmarkFragment.newInstance(program))
+//                        .commit();
 
                 break;
             }
             case R.id.nav_phd: {
+                Intent intent = new Intent(this,ProgramActivity.class);
+                intent.putExtra("ProgramID",4);
+                startActivity(intent);
 
-                getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.fragmentContainer,
-                                DurationFragment.newInstance(program))
-                        .commit();
+//                getSupportFragmentManager().beginTransaction()
+//                        .replace(R.id.fragmentContainer,
+//                                DurationFragment.newInstance(program))
+//                        .commit();
 
                 break;
             }
             case R.id.nav_staff: {
-                getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.fragmentContainer, AllStaffFragment.newInstance()).commit();
+                Intent intent= new Intent(this,StaffActivity.class);
+                startActivity(intent);
+//                getSupportFragmentManager().beginTransaction()
+//                        .replace(R.id.fragmentContainer, AllStaffFragment.newInstance()).commit();
                 break;
             }
             case R.id.nav_home: {
@@ -181,16 +187,16 @@ public class StartPageActivity extends AppCompatActivity
         return true;
     }
 
-    @Override
-    public void onListFragmentInteraction(int position) {
-
-        getSupportFragmentManager().beginTransaction()
-                .replace(R.id.fragmentContainer,
-                        DetailsFragment.newInstance(position))
-                .addToBackStack(null)
-                .commit();
-
-    }
+//    @Override
+//    public void onListFragmentInteraction(int position) {
+//
+//        getSupportFragmentManager().beginTransaction()
+//                .replace(R.id.fragmentContainer,
+//                        DetailsFragment.newInstance(position))
+//                .addToBackStack(null)
+//                .commit();
+//
+//    }
 
     public void showCloseDialogue() {
 
@@ -245,14 +251,14 @@ public class StartPageActivity extends AppCompatActivity
         }
     }
 
-    @Override
-    public void onItemClick(int position) {
-
-        getSupportFragmentManager().beginTransaction()
-                .replace(R.id.fragmentContainer,
-                        StaffFragment.newInstance(position))
-                .addToBackStack(null).commit();
-    }
+//    @Override
+//    public void onItemClick(int position) {
+//
+//        getSupportFragmentManager().beginTransaction()
+//                .replace(R.id.fragmentContainer,
+//                        StaffFragment.newInstance(position))
+//                .addToBackStack(null).commit();
+//    }
 
 
 

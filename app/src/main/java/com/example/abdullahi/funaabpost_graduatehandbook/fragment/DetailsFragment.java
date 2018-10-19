@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 
 import com.example.abdullahi.funaabpost_graduatehandbook.R;
 import com.example.abdullahi.funaabpost_graduatehandbook.adapters.SynopsisRecyclerViewAdapter;
+import com.example.abdullahi.funaabpost_graduatehandbook.data.Course;
 import com.example.abdullahi.funaabpost_graduatehandbook.data.CourseSynopsis;
 import com.example.abdullahi.funaabpost_graduatehandbook.provider.HandbookLibrary;
 
@@ -54,8 +55,9 @@ public class DetailsFragment extends Fragment {
 
 
         List<CourseSynopsis> synopses = HandbookLibrary.getSynopsis(getContext(), courseId);
+        Course course  = HandbookLibrary.getSpecificCourse(getContext(),courseId);
 
-        SynopsisRecyclerViewAdapter adapter = new SynopsisRecyclerViewAdapter(synopses,getContext());
+        SynopsisRecyclerViewAdapter adapter = new SynopsisRecyclerViewAdapter(synopses,getContext(),course);
 
         if (view instanceof RecyclerView) {
             Context context = view.getContext();

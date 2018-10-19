@@ -217,4 +217,7 @@
     <string name="first_semester">First Semester</string>
     <string name="second_semester">Second Semester</string>
 
+    <string name="adm_req">Admission Requirement</string>
+    <string name="grad_req">Graduation Requirement</string>
+
 </resources>

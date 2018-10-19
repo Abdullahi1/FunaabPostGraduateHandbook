@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TableLayout android:id="@+id/synopsisTable"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/black"/>
+
+    <TableRow android:id="@+id/tableRow1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <View
+                android:layout_width="3dp"
+                android:background="@android:color/black"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:id="@+id/synopsis_Course_name"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:textSize="15sp"
+                android:text="CourseName: Csc 409"/>
+            <View
+                android:layout_width="3dp"
+                android:background="@android:color/black"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:id="@+id/synopsis_Course_code"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:textSize="15sp"
+                android:text="CourseName: Csc 409"/>
+            <View
+                android:layout_width="3dp"
+                android:background="@android:color/black"
+                android:layout_height="match_parent" />
+
+        </TableRow>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/black"/>
+
+        <TableRow android:id="@+id/tableRow2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <View
+                android:layout_width="3dp"
+                android:background="@android:color/black"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:id="@+id/synopsis_Course_unit"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:textSize="15sp"
+                android:text="CourseName: Csc 409"/>
+            <View
+                android:layout_width="3dp"
+                android:background="@android:color/black"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:id="@+id/synopsis_Course_type"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:textSize="15sp"
+                android:text="CourseName: Csc 409"/>
+            <View
+                android:layout_width="3dp"
+                android:background="@android:color/black"
+                android:layout_height="match_parent" />
+
+        </TableRow>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/black"/>
+
+    </TableLayout>

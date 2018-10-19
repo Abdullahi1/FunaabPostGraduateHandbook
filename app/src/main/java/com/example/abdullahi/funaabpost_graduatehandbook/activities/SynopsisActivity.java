@@ -12,6 +12,7 @@ import android.view.MenuItem;
 
 import com.example.abdullahi.funaabpost_graduatehandbook.R;
 import com.example.abdullahi.funaabpost_graduatehandbook.adapters.SynopsisRecyclerViewAdapter;
+import com.example.abdullahi.funaabpost_graduatehandbook.data.Course;
 import com.example.abdullahi.funaabpost_graduatehandbook.data.CourseSynopsis;
 import com.example.abdullahi.funaabpost_graduatehandbook.provider.HandbookLibrary;
 
@@ -27,8 +28,9 @@ public class SynopsisActivity extends AppCompatActivity {
         int courseId = getIntent().getIntExtra(CourseActivity.COURSE_ID, 1);
 
         List<CourseSynopsis> synopses = HandbookLibrary.getSynopsis(this, courseId);
+        Course course  = HandbookLibrary.getSpecificCourse(this,courseId);
 
-        SynopsisRecyclerViewAdapter adapter = new SynopsisRecyclerViewAdapter(synopses, this);
+        SynopsisRecyclerViewAdapter adapter = new SynopsisRecyclerViewAdapter(synopses, this,course);
 
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.synopsisList);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -43,9 +45,11 @@ public class SynopsisActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == android.R.id.home) {
-            NavUtils.navigateUpFromSameTask(this);
+           // NavUtils.navigateUpFromSameTask(this);
+            onBackPressed();
             return true;
         }
         return super.onOptionsItemSelected(item);
     }
+
 }

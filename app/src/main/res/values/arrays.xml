@@ -28,6 +28,9 @@
         <item>@string/pref_font_large_value</item>
         <item>@string/pref_font_extra_large_value</item>
     </array>
-
+<array name="requirement_option">
+    <item>@string/adm_req</item>
+    <item>@string/grad_req</item>
+</array>
 
 </resources>

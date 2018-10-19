@@ -23,44 +23,23 @@ import java.util.List;
 
 public class SSRecyclerViewAdapter extends RecyclerView.Adapter<SSRecyclerViewAdapter.ViewHolder> {
 
-    private static final int TYPE_HEADER = 0;
-    private static final int TYPE_ITEM = 1;
     private final OnListFragmentInteractionListener mListener;
     private final List<Course> courses;
-    private final int program;
     private final Context context;
 
-    public SSRecyclerViewAdapter(List<Course> course, OnListFragmentInteractionListener listener, int programID , Context context) {
+    public SSRecyclerViewAdapter(List<Course> course, OnListFragmentInteractionListener listener, Context context) {
         this.context = context;
         courses = course;
         mListener = listener;
-        program = programID;
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        int layoutId;
-
-        switch (viewType) {
-
-            case TYPE_HEADER: {
-                layoutId = R.layout.header_layout;
-                break;
-            }
-
-            case TYPE_ITEM: {
-                layoutId = R.layout.fragment_sscourse;
-                break;
-            }
-
-            default:
-                throw new IllegalArgumentException("Invalid view type, value of " + viewType);
-        }
 
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(layoutId, parent, false);
+                .inflate(R.layout.fragment_sscourse, parent, false);
         return new ViewHolder(view);
     }
 
@@ -68,12 +47,7 @@ public class SSRecyclerViewAdapter extends RecyclerView.Adapter<SSRecyclerViewAd
     public void onBindViewHolder(@NonNull final ViewHolder holder, final int position) {
 
 
-        if (position == 0) {
-
-            holder.Tv_header.setText(getHeader(program));
-
-        } else {
-            final Course entry = courses.get(getNewItemPosition(position));
+            final Course entry = courses.get(position);
             setFont(holder,context);
 
             holder.Tv_courseCode.setText(entry.getCourseCode());
@@ -97,57 +71,20 @@ public class SSRecyclerViewAdapter extends RecyclerView.Adapter<SSRecyclerViewAd
                 }
             });
         }
-    }
+
 
     @Override
     public int getItemCount() {
-        return courses.size() + 1;
+        return courses.size();
     }
 
-    @Override
-    public int getItemViewType(int position) {
-        if (isPositionHeader(position)) {
-            return TYPE_HEADER;
-        } else {
-            return TYPE_ITEM;
-        }
-    }
 
-    private String getHeader(int programID) {
-        String programName = null;
-        String content;
-        switch (programID) {
-            case 1:
-                programName = "Post-Graduate Diploma (PGD)";
-                break;
-            case 2:
-                programName = "Academic Master (M.Sc.)";
-                break;
-            case 3:
-                programName = "Professional Masters (M. ICT)";
-                break;
-            case 4:
-                programName = "PHD";
-                break;
-        }
-        content = "Second Semester Courses";
-        return content;
-    }
-
-    private boolean isPositionHeader(int position) {
-        return position == 0;
-    }
-
-    private int getNewItemPosition(int position) {
-        return position - 1;
-    }
 
     class ViewHolder extends RecyclerView.ViewHolder {
         final View mView;
         final TextView Tv_courseCode;
         final TextView Tv_courseName;
         final TextView Tv_courseAbbr;
-        final TextView Tv_header;
 
         ViewHolder(View view) {
             super(view);
@@ -155,7 +92,6 @@ public class SSRecyclerViewAdapter extends RecyclerView.Adapter<SSRecyclerViewAd
             Tv_courseCode = view.findViewById(R.id.ss_courseCode);
             Tv_courseName = view.findViewById(R.id.ss_course_name);
             Tv_courseAbbr = view.findViewById(R.id.ss_abbreviation);
-            Tv_header = view.findViewById(R.id.headerTitle1);
         }
 
 

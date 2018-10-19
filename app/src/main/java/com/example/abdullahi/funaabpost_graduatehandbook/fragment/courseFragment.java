@@ -68,15 +68,15 @@ public class courseFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_course_list, container, false);
 
-        if (programID == 4) {
-            //noinspection ConstantConditions
-            getActivity().setTitle("Ph. D. Course Work");
-
-        } else {
-            //noinspection ConstantConditions
-            getActivity().setTitle("First Semester Courses");
-
-        }
+//        if (programID == 4) {
+//            //noinspection ConstantConditions
+//            getActivity().setTitle("Ph. D. Course Work");
+//
+//        } else {
+//            //noinspection ConstantConditions
+//            getActivity().setTitle("First Semester Courses");
+//
+//        }
 
         List<Course> coursesList = HandbookLibrary.getCourses(getContext(), semester, programID);
 

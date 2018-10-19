@@ -7,14 +7,17 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
 import com.example.abdullahi.funaabpost_graduatehandbook.R;
+import com.example.abdullahi.funaabpost_graduatehandbook.fragment.PhDCourseFragment;
 import com.example.abdullahi.funaabpost_graduatehandbook.fragment.SSCourseFragment;
 import com.example.abdullahi.funaabpost_graduatehandbook.fragment.courseFragment;
 
 public class CourseFragmentPagerAdapter extends FragmentPagerAdapter {
 
-    String [] tabTitles = new String[]{"First Semester", "Second Semester"};
-    Context context;
     int programID;
+
+    private String tabTitles[] = new String[]{"First Semester", "Second Semester"};
+
+    private Context context;
 
     public CourseFragmentPagerAdapter(FragmentManager fm, Context context, int programID) {
         super(fm);
@@ -26,17 +29,22 @@ public class CourseFragmentPagerAdapter extends FragmentPagerAdapter {
         super(fm);
     }
 
+
     @Override
     public Fragment getItem(int position) {
         switch (position) {
             case 0: {
-                return  courseFragment.newInstance(programID);
+                if (programID == 4){
+                    return PhDCourseFragment.newInstance(programID);
+                }else {
+                    return courseFragment.newInstance(programID);
+                }
             }
-            case 1:{
+            case 1: {
                 return SSCourseFragment.newInstance(programID);
-            }
 
-            default:{
+            }
+            default: {
                 return null;
             }
         }
@@ -45,21 +53,28 @@ public class CourseFragmentPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public int getCount() {
-        return 2;
+        if (programID == 4){
+            return 1;
+        }else {
+            return 2;
+        }
     }
 
     @Nullable
     @Override
     public CharSequence getPageTitle(int position) {
-        switch (position){
-            case 0:{
-                return context.getResources().getString(R.string.first_semester);
+        switch (position) {
+            case 0: {
+                if (programID == 4) {
+                    return "Course Work";
+                }else {
+                    return context.getResources().getString(R.string.first_semester);
+                }
             }
-            case 1:
-            {
+            case 1: {
                 return context.getResources().getString(R.string.second_semester);
             }
-            default:{
+            default: {
                 return null;
             }
         }

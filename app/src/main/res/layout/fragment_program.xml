@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".fragment.ProgramFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:id="@+id/program_admission_requirement"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:textSize="30sp"
+        android:background="#66ffa6"
+        android:text="ADMISSION REQUIREMENT"/>
+    <TextView
+        android:id="@+id/program_courses"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:textSize="30sp"
+        android:background="@android:color/holo_green_dark"
+        android:text="COURSES"/>
+    <TextView
+        android:id="@+id/program_research_benchmark"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:textSize="30sp"
+        android:background="#b0ff57"
+        android:text=" RESEARCH BENCHMARK"/>
+    <TextView
+        android:id="@+id/program_duration"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:textSize="30sp"
+        android:background="#e4ff54"
+        android:text="PROGRAM DURATION"/>
+    <TextView
+        android:id="@+id/program_graduation_requirement"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:textSize="30sp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        android:background="#79b700"
+        android:text="GRADUATION REQUIREMENT"/>
+</LinearLayout>

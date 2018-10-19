@@ -82,6 +82,42 @@ public class HandbookLibrary {
         return courses;
     }
 
+    public static Course getSpecificCourse(Context context, int courseID) {
+        Course course = null;
+
+
+        Cursor cursor = null;
+        try {
+            try {
+
+                cursor = getSpecificCourseCursor(context, courseID);
+
+                while (cursor.moveToNext()) {
+                    String courseName = cursor.getString(cursor.getColumnIndex(Course.course_name));
+                    String courseCode = cursor.getString(cursor.getColumnIndex(Course.course_code));
+                    String courseAbbreviation = cursor.getString(cursor.getColumnIndex(Course.course_abbreviation));
+                    int courseUnit = cursor.getInt(cursor.getColumnIndex(Course.course_unit));
+                    int courseType = cursor.getInt(cursor.getColumnIndex(Course.course_type_id));
+                    course= new Course(
+                            courseCode,
+                            courseName,
+                            courseAbbreviation,
+                            courseUnit,
+                            courseType);
+                }
+            } finally {
+                if (cursor != null) {
+                    cursor.close();
+                }
+            }
+        } catch (Exception e) {
+            Log.e(TAG, e.getMessage(), e);
+        }
+
+        return course;
+    }
+
+
     public static List<CourseSynopsis> getSynopsis(Context context, int courseID) {
         List<CourseSynopsis> synopsis = new ArrayList<>();
         synopsis.clear();
@@ -273,6 +309,19 @@ public class HandbookLibrary {
         SQLiteDatabase database = dbHelper.getReadableDatabase();
         return database.rawQuery(courseQuery, null);
     }
+
+    private static Cursor getSpecificCourseCursor(Context context, int courseID) {
+        String courseIDString = String.valueOf(courseID);
+        String courseQuery = "SELECT "
+                +  Course.course_name + "," + Course.course_code + ","
+                + Course.course_abbreviation + "," + Course.course_unit + "," + Course.course_type_id +
+                " FROM course WHERE " + Course.ID + " = " + courseIDString;
+
+        HandbookDatabaseHelper dbHelper = new HandbookDatabaseHelper(context);
+        SQLiteDatabase database = dbHelper.getReadableDatabase();
+        return database.rawQuery(courseQuery, null);
+    }
+
 
     private static Cursor getPhDCourseCursor(Context context, int semesterID, int programID) {
         String semesterIDString = String.valueOf(semesterID);

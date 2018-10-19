@@ -8,6 +8,7 @@ import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -55,7 +56,7 @@ public class DurationFragment extends Fragment {
 
 
         //noinspection ConstantConditions
-        getActivity().setTitle("HandbookPreferences Duration");
+        getActivity().setTitle("Program Duration");
 
 
         List<ProgramDuration> programDurationList = HandbookLibrary.getDuration(getContext(), programID);
@@ -71,5 +72,14 @@ public class DurationFragment extends Fragment {
             recyclerView.addItemDecoration(new DividerItemDecoration(getContext(), DividerItemDecoration.VERTICAL));
         }
         return view;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == android.R.id.home){
+            getParentFragment();
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

@@ -19,22 +19,12 @@
 </item>
 
 
-    <item android:title="Courses">
-        <menu>
-            <item
-                android:id="@+id/nav_first_semester"
-                android:title="First Semester" />
-            <item
-                android:id="@+id/nav_second_semester"
-                android:title="Second Semester" />
-        </menu>
-    </item>
 
     <item android:title="Programme">
         <menu>
             <item
                 android:id="@+id/nav_pgd"
-                android:title="Postgraduate Diploma Structure" />
+                android:title="Postgraduate Diploma (PG D)" />
             <item
                 android:id="@+id/nav_msc"
                 android:title="Master of Science in Computer Science(M.Sc.)" />

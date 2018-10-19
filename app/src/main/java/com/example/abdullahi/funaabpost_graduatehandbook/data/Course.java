@@ -19,6 +19,15 @@ public class Course implements BaseColumns {
     private final String courseName;
     private String abbreviation;
     private int unit;
+    private int type;
+
+    public Course(String courseCode, String courseName, String abbreviation, int unit, int type) {
+        this.courseCode = courseCode;
+        this.courseName = courseName;
+        this.abbreviation = abbreviation;
+        this.unit = unit;
+        this.type = type;
+    }
 
     public Course(int id, String courseCode, String courseName, String abbreviation,
                   int unit) {
@@ -34,6 +43,8 @@ public class Course implements BaseColumns {
         super();
         this.courseName = courseName;
     }
+
+
 
     public int getId() {
         return Id;
@@ -55,5 +66,7 @@ public class Course implements BaseColumns {
         return unit;
     }
 
-
+    public int getType() {
+        return type;
+    }
 }

@@ -48,6 +48,20 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".activities.StartPageActivity" />
         </activity>
+
+        <activity android:name=".activities.ProgramActivity"
+            android:parentActivityName=".activities.StartPageActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.StartPageActivity" />
+        </activity>
+
+        <activity android:name=".activities.StaffActivity"
+            android:parentActivityName=".activities.StartPageActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.StartPageActivity" />
+        </activity>
     </application>
 
 </manifest>
