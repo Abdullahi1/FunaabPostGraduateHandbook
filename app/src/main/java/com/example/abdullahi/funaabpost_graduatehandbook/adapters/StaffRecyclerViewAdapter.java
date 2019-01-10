@@ -16,7 +16,7 @@ import com.example.abdullahi.funaabpost_graduatehandbook.fragment.AllStaffFragme
 
 import java.util.List;
 
-import static com.example.abdullahi.funaabpost_graduatehandbook.data.AcademicStaff.image;
+
 
 /**
  * {@link RecyclerView.Adapter} that can display a {@link DummyItem} and makes a call to the
@@ -46,10 +46,10 @@ public class StaffRecyclerViewAdapter extends RecyclerView.Adapter<StaffRecycler
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder holder, final int position) {
 
-
+        AcademicStaff.add();
         AcademicStaff staff = staffList.get(position);
-
-        holder.staffImage.setImageResource(image[position]);
+        int imageId = AcademicStaff.getImage(staff.getName());
+        holder.staffImage.setImageResource(imageId);
         holder.staffName.setText(staff.getName());
         final int staffId = staff.getId();
 

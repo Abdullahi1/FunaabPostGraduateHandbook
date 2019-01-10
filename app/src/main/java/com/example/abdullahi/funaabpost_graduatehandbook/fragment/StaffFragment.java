@@ -14,7 +14,7 @@ import com.example.abdullahi.funaabpost_graduatehandbook.R;
 import com.example.abdullahi.funaabpost_graduatehandbook.data.AcademicStaff;
 import com.example.abdullahi.funaabpost_graduatehandbook.provider.HandbookLibrary;
 
-import static com.example.abdullahi.funaabpost_graduatehandbook.data.AcademicStaff.image;
+
 
 
 public class StaffFragment extends Fragment {
@@ -58,8 +58,10 @@ public class StaffFragment extends Fragment {
         TextView mLecturerQualification = view.findViewById(R.id.lecturerQualification);
         TextView mLecturerSpecialization = view.findViewById(R.id.lecturerSpecialization);
 
-        mLecturerImage.setImageResource(image[staffID - 1]);
-        mLecturerName.setText(staff.getName());
+        String staffName = staff.getName();
+        int imageID = AcademicStaff.getImage(staffName);
+        mLecturerImage.setImageResource(imageID);
+        mLecturerName.setText(staffName);
         mLecturerRank.setText(getRank(staff.getRank()));
         mLecturerQualification.setText(staff.getQualification());
         mLecturerSpecialization.setText(staff.getSpecialization());
