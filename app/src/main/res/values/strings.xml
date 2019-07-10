@@ -214,6 +214,17 @@
 
     </string>
 
+    <string name="mission">
+        "•	Stimulate sustained interest and enthusiasm in computer science.\n"
+        "•	Train students the necessary computing knowledge and skills required to provide effective and timeless computing service.\n"
+        "•	Train students with a solid foundation in computer science and knowledge that are required for postgraduate studies and research.\n"
+        "•	Conduct research and advance state of the art in computer science and integrate its innovation into other disciplines.\n"
+    </string>
+
+    <string name="vision">
+    To be the leading department in research and teaching towards the economic growth of the nation through ICT.\n
+    </string>
+
     <string name="first_semester">First Semester</string>
     <string name="second_semester">Second Semester</string>
 

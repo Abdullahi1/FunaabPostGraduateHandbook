@@ -1,7 +1,10 @@
 package com.example.abdullahi.funaabpost_graduatehandbook.fragment;
 
+import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -53,6 +56,8 @@ public class StaffFragment extends Fragment {
         AcademicStaff staff = HandbookLibrary.getSpecificStaff(getContext(), staffID);
 
         ImageView mLecturerImage = view.findViewById(R.id.lecturerPicture);
+
+        //CollapsingToolbarLayout mLecturerImage = view.findViewById(R.id.toolbar_layout);
         TextView mLecturerName = view.findViewById(R.id.lecturerName);
         TextView mLecturerRank = view.findViewById(R.id.lecturerRank);
         TextView mLecturerQualification = view.findViewById(R.id.lecturerQualification);
@@ -60,6 +65,10 @@ public class StaffFragment extends Fragment {
 
         String staffName = staff.getName();
         int imageID = AcademicStaff.getImage(staffName);
+//        Drawable image = getActivity().getResources().getDrawable(imageID);
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+//            mLecturerImage.setBackground(image);
+//        }
         mLecturerImage.setImageResource(imageID);
         mLecturerName.setText(staffName);
         mLecturerRank.setText(getRank(staff.getRank()));

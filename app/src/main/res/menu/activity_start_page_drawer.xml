@@ -4,14 +4,16 @@
     tools:showIn="navigation_view">
 
 
-<item android:title="Home">
+<item>
 
         <menu>
             <item
+                android:icon="@drawable/ic_home_black_24dp"
                 android:id="@+id/nav_home"
                 android:title="Home" />
 
             <item
+                android:icon="@drawable/ic_person_black_24dp"
                 android:id="@+id/nav_staff"
                 android:title="Academic Staff" />
 
@@ -20,19 +22,23 @@
 
 
 
-    <item android:title="Programme">
+    <item android:title="Programmes">
         <menu>
             <item
+                android:icon="@drawable/ic_assignment_black_24dp"
                 android:id="@+id/nav_pgd"
                 android:title="Postgraduate Diploma (PG D)" />
             <item
+                android:icon="@drawable/ic_assignment_black_24dp"
                 android:id="@+id/nav_msc"
-                android:title="Master of Science in Computer Science(M.Sc.)" />
+                android:title="Academic Master's Degree (M.Sc.)" />
             <item
-            android:id="@+id/nav_mict"
-            android:title="Master of Information and Communication Technology(M.ICT)" />
+                android:icon="@drawable/ic_assignment_black_24dp"
+                android:id="@+id/nav_mict"
+            android:title="Professional Master's Degree (M.ICT)" />
 
             <item
+                android:icon="@drawable/ic_assignment_black_24dp"
                 android:id="@+id/nav_phd"
                 android:title="Doctor of Philosophy (Ph.D.)" />
         </menu>

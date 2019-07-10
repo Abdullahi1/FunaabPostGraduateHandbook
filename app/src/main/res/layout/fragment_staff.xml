@@ -40,7 +40,14 @@
                 android:layout_margin="@dimen/text_margin"
                 android:text="FUNSEYB"
                 android:textAppearance="?attr/textAppearanceListItem" />
-
+            <TextView
+                android:id="@+id/office"
+                android:textAppearance="?attr/textAppearanceListItem"
+                android:text="Ag. HOD"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
         </LinearLayout>
 
     </LinearLayout>

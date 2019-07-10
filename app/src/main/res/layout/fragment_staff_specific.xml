@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="match_parent">
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
         android:orientation="vertical"
         tools:context=".fragment.StaffFragment">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
             android:gravity="center">
 
             <ImageView
@@ -25,7 +25,6 @@
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
                 android:contentDescription="Staff Picture"
                 android:src="@mipmap/demo_image"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -33,6 +32,10 @@
                 app:layout_constraintTop_toTopOf="parent" />
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -63,6 +66,11 @@
 
 
         </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="?android:attr/listDivider" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -95,6 +103,11 @@
 
         </LinearLayout>
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="?android:attr/listDivider" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -126,6 +139,11 @@
 
         </LinearLayout>
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="?android:attr/listDivider" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -156,7 +174,50 @@
                 app:layout_constraintTop_toBottomOf="@+id/lecturerSpecialization" />
 
         </LinearLayout>
+        </LinearLayout>
 
 
     </LinearLayout>
 </ScrollView>
+
+
+
+<!--<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--xmlns:tools="http://schemas.android.com/tools"-->
+<!--android:layout_width="match_parent"-->
+<!--android:layout_height="match_parent"-->
+<!--android:fitsSystemWindows="true"-->
+    <!--tools:context=".fragment.StaffFragment">-->
+<!--&lt;!&ndash;tools:context=".activities.StartPageActivity">&ndash;&gt;-->
+
+<!--<android.support.design.widget.AppBarLayout-->
+    <!--android:id="@+id/app_bar"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="500dp"-->
+    <!--android:fitsSystemWindows="false"-->
+    <!--android:background="#FFFFFF"-->
+    <!--android:theme="@style/AppTheme.AppBarOverlay">-->
+
+    <!--<android.support.design.widget.CollapsingToolbarLayout-->
+        <!--android:id="@+id/toolbar_layout"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:fitsSystemWindows="false"-->
+        <!--android:background="@mipmap/demo_image"-->
+        <!--app:layout_scrollFlags="scroll|exitUntilCollapsed"-->
+        <!--app:toolbarId="@+id/toolbar">-->
+
+        <!--<android.support.v7.widget.Toolbar-->
+            <!--android:id="@+id/toolbar"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="?attr/actionBarSize"-->
+            <!--app:layout_collapseMode="pin"-->
+            <!--app:popupTheme="@style/AppTheme.PopupOverlay" />-->
+
+    <!--</android.support.design.widget.CollapsingToolbarLayout>-->
+<!--</android.support.design.widget.AppBarLayout>-->
+
+<!--<include layout="@layout/staff_content_scrolling" />-->
+
+<!--</android.support.design.widget.CoordinatorLayout>-->

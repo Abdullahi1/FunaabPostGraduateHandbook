@@ -1,6 +1,7 @@
 package com.example.abdullahi.funaabpost_graduatehandbook.adapters;
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -47,11 +48,18 @@ public class StaffRecyclerViewAdapter extends RecyclerView.Adapter<StaffRecycler
     public void onBindViewHolder(@NonNull final ViewHolder holder, final int position) {
 
         AcademicStaff.add();
+
         AcademicStaff staff = staffList.get(position);
         int imageId = AcademicStaff.getImage(staff.getName());
         holder.staffImage.setImageResource(imageId);
         holder.staffName.setText(staff.getName());
         final int staffId = staff.getId();
+        if (position == 0){
+            holder.staffOffice.setVisibility(View.VISIBLE);
+            holder.staffOffice.setTypeface(null, Typeface.BOLD);
+        }else {
+            holder.staffOffice.setVisibility(View.INVISIBLE);
+        }
 
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,12 +83,15 @@ public class StaffRecyclerViewAdapter extends RecyclerView.Adapter<StaffRecycler
         final View mView;
         final ImageView staffImage;
         final TextView staffName;
+        final TextView staffOffice;
 
         ViewHolder(View view) {
             super(view);
             mView = view;
             staffImage = view.findViewById(R.id.staff_picture);
             staffName = view.findViewById(R.id.staffName);
+            staffOffice = view.findViewById(R.id.office);
+
         }
 
     }

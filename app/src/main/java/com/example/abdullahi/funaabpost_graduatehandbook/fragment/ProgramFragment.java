@@ -180,7 +180,7 @@ public class ProgramFragment extends Fragment {
                 return "Master of Science in Computer Science";
             }
             case 3: {
-                return "Master of Information and Communication";
+                return "Master of Information and Communication Technology";
             }
             case 4: {
                 return "Doctor of Philosophy";

@@ -29,7 +29,6 @@ public class StartPageActivity extends AppCompatActivity
 
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,12 +45,17 @@ public class StartPageActivity extends AppCompatActivity
 
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        navigationView.getMenu().findItem(R.id.nav_home).setEnabled(true);
 
         //program = HandbookPreferences.getProgramID(this);
 
         //chooseFragment(program);
+
+        //selectNavigationMenuItem(R.id.nav_home);
+
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.fragmentContainer, HomeFragment.newInstance()).commit();
+
 
 
 //        if (program == 4) {
@@ -96,6 +100,14 @@ public class StartPageActivity extends AppCompatActivity
 
         return super.onOptionsItemSelected(item);
     }
+
+//    @Override
+//    protected void onStart() {
+//        super.onStart();
+//        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+//            drawer.openDrawer(GravityCompat.START);
+//
+//    }
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
@@ -175,9 +187,11 @@ public class StartPageActivity extends AppCompatActivity
                 break;
             }
             case R.id.nav_home: {
+                selectNavigationMenuItem(R.id.nav_home);
                 getSupportFragmentManager().beginTransaction()
                         .replace(R.id.fragmentContainer, HomeFragment.newInstance()).commit();
                 break;
+
             }
 
         }
@@ -261,7 +275,12 @@ public class StartPageActivity extends AppCompatActivity
 //    }
 
 
+    private void selectNavigationMenuItem(int id) {
 
+        NavigationView navigationView = findViewById(R.id.nav_view);
+        Menu menu = navigationView.getMenu();
+        menu.findItem(id).setEnabled(true);
+    }
 }
 
 

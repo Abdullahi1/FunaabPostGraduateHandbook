@@ -51,20 +51,20 @@ public class AcademicStaff {
     }
 
     public static void add(){
-        mapImage.put("Akinwale",R.drawable.family_father);
-        mapImage.put("Folorunso",R.drawable.family_father);
-        mapImage.put("Sodiya",R.drawable.family_father);
-        mapImage.put("Ojesanmi",R.drawable.family_father);
-        mapImage.put("Onashoga",R.drawable.family_father);
-        mapImage.put("Arogundade",R.drawable.family_father);
-        mapImage.put("Vincent",R.drawable.family_father);
-        mapImage.put("Ibrahalu",R.drawable.family_father);
-        mapImage.put("Abayomi-Alli",R.drawable.family_father);
-        mapImage.put("Aborisade",R.drawable.family_father);
-        mapImage.put("Ojo",R.drawable.family_father);
-        mapImage.put("Salako",R.drawable.family_father);
-        mapImage.put("Tinubu",R.drawable.family_father);
-        mapImage.put("Adejimi",R.drawable.family_father);
+        mapImage.put("Akinwale",R.mipmap.prof_akinwale);
+        mapImage.put("Folorunso",R.mipmap.prof_folorunso);
+        mapImage.put("Sodiya",R.mipmap.prof_sodiya);
+        mapImage.put("Ojesanmi",R.mipmap.dr_ojesanmi);
+        mapImage.put("Onashoga",R.mipmap.dr_onashoga);
+        mapImage.put("Arogundade",R.mipmap.dr_arogundade);
+        mapImage.put("Vincent",R.mipmap.dr_vincent);
+        mapImage.put("Ibrahalu",R.mipmap.dr_ibrahalu);
+        mapImage.put("Abayomi-Alli",R.mipmap.dr_alli);
+        mapImage.put("Aborisade",R.mipmap.dr_aborisade);
+        mapImage.put("Ojo",R.mipmap.dr_ojo);
+        mapImage.put("Salako",R.mipmap.salako);
+        mapImage.put("Tinubu",R.mipmap.oloruntobaco);
+        mapImage.put("Adejimi",R.mipmap.adejimi);
     }
 
     public static int getImage(String name){

@@ -39,6 +39,10 @@ public class HomeFragment extends Fragment {
         TextView staticPhilosophyValue = view.findViewById(R.id.staticPhilosophyValue);
         TextView staticObjectiveLabel = view.findViewById(R.id.staticObjectiveLabel);
         TextView staticObjectiveValue = view.findViewById(R.id.staticObjectiveValue);
+        TextView staticMissionLabel = view.findViewById(R.id.staticMissionLabel);
+        TextView staticMissionValue = view.findViewById(R.id.staticMissionValue);
+        TextView staticVisionLabel = view.findViewById(R.id.staticVisionLabel);
+        TextView staticVisionValue = view.findViewById(R.id.staticVisionValue);
 
         staticIntroLabel.setTextSize(HandbookPreferences.getFontSize(context) + 7);
         staticIntroValue.setTextSize(HandbookPreferences.getFontSize(context));
@@ -46,6 +50,10 @@ public class HomeFragment extends Fragment {
         staticPhilosophyValue.setTextSize(HandbookPreferences.getFontSize(context));
         staticObjectiveLabel.setTextSize(HandbookPreferences.getFontSize(context) + 7);
         staticObjectiveValue.setTextSize(HandbookPreferences.getFontSize(context));
+        staticMissionLabel.setText(HandbookPreferences.getFontSize(context) + 7);
+        staticMissionValue.setText(HandbookPreferences.getFontSize(context));
+        staticVisionLabel.setText(HandbookPreferences.getFontSize(context) + 7);
+        staticVisionValue.setText(HandbookPreferences.getFontSize(context));
         return view;
     }
 

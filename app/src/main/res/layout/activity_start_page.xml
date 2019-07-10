@@ -19,6 +19,7 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
+        style="@style/textSizeStyle"
         app:headerLayout="@layout/nav_header_start_page"
         app:menu="@menu/activity_start_page_drawer" />
 
